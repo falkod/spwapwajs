@@ -9,16 +9,18 @@ angular
   controller.$inject = ['$scope'];
 
   function controller($scope) {
-
+    // init var
     $scope.menuList = "";
     $scope.approvalMessage = "";
-    $scope.approvalColor = "black";
+    $scope.approvalColor = "";
 
-    // empty values are bypassed
     $scope.checkMenu = function () {
+      // set the approval message; empty values are bypassed
       $scope.approvalMessage =
         $scope.menuList == "" ? "Please enter data first" :
           $scope.menuList.split(",").filter(i => i.trim().length > 0).length <= 3 ? "Enjoy!" : "Too much!";
+
+      // define the color component color
       $scope.approvalColor = $scope.menuList == "" ? "red" : "green";
     };
   }
