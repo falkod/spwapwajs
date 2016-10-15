@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="LunchCheck">
   <head>
     <title>Lunch Checker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,20 +11,21 @@
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
   </head>
-<body ng-app="LunchCheck">
+<body>
    <div class="container" ng-controller="LunchCheckController">
      <h1>Lunch Checker</h1>
          <div class="form-group">
-              <!-- empty values are invalid and are not part of calulation -->
+              <!-- empty values are not counted -->
              <input id="lunch-menu" type="text"
              ng-model="menuList"
-             placeholder="list comma separated dishes you usually have for lunch"
+             style="border-color:{{approvalColor}}"
+             placeholder="list comma separated dishes you usually have for lunch (empty values not counted)"
              class="form-control">
          </div>
          <div class="form-group">
              <button class="btn btn-default" ng-click="checkMenu()">Check If Too Much</button>
          </div>
-         <div class="form-group message">
+         <div class="form-group message" style="color:{{approvalColor}}">
            {{approvalMessage}}
          </div>
    </div>
