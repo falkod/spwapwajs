@@ -1,0 +1,9 @@
+<table class="table table-hover" style="clear:left" ng-if="ctrl.itemList.length > 0">
+    <tr ng-repeat='item in ctrl.itemList'>
+      <td>{{item.short_name}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.description}}</td>
+      <td><button ng-click='ctrl.removeItem({index: $index})'>Don't want this one!</button></td>
+    </tr>
+</table>
+<div class="error" ng-if="ctrl.checkMessage()" style="clear:left;"><strong>Nothing found</strong></div>
