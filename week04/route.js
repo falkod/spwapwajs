@@ -8,11 +8,11 @@
   RouterConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
   function RouterConfig($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise("/");
 
     $stateProvider
       .state('home', {
-        url: '/home',
+        url: '/',
         templateUrl: 'state.home.html'
       })
       .state('categories', {
