@@ -10,10 +10,10 @@
     var ctrl = this;
 
     ctrl.user = {
-      firstname: 'qsdfqsdf',
-      lastname: 'qsdfqsdf',
-      email: 'qsdf@qsdf.com',
-      phone: '123 1234 1234',
+      firstname: '',
+      lastname: '',
+      email: '',
+      phone: '',
       favoriteMenu: {}
     };
 
@@ -22,7 +22,7 @@
       console.log(ctrl.user.favoriteMenu.short_name);
       MenuService.getItem(ctrl.user.favoriteMenu.short_name)
       .then(function (item) {
-        if (item != null && item.status === undefined) {
+        if (item.status === undefined) {
           $scope.signupForm.favoriteMenu.$setValidity("validMenu", true);
           ctrl.user.favoriteMenu = item;
           $scope.signupForm.favoriteMenu.$setValidity("validMenu", true);
