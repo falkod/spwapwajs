@@ -22,7 +22,7 @@
       console.log(ctrl.user.favoriteMenu.short_name);
       MenuService.getItem(ctrl.user.favoriteMenu.short_name)
       .then(function (item) {
-        if (item.status === undefined) {
+        if (item != null && item.status === undefined) {
           $scope.signupForm.favoriteMenu.$setValidity("validMenu", true);
           ctrl.user.favoriteMenu = item;
           $scope.signupForm.favoriteMenu.$setValidity("validMenu", true);
