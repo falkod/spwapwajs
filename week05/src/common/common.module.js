@@ -3,7 +3,7 @@
 
 angular.module('common', [])
 // .constant('ApiPath', 'https://ychaikin-course5.herokuapp.com')
-.constant('ApiPath', 'http://spwawajs.herokuapp.com')
+.constant('ApiPath', 'https://spwawajs.herokuapp.com')
 .config(config);
 
 config.$inject = ['$httpProvider'];
